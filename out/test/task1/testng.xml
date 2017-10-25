@@ -1,0 +1,32 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="main-suite">
+    <test name="TriangleCreatorTest">
+        <classes>
+            <class name="by.epam.action.CalculateAreaActionTest"/>
+        </classes>
+    </test>
+    <test name="CalculationTestPerimeter">
+        <classes>
+            <class name="by.epam.action.CalculatePerimeterActionTest"/>
+        </classes>
+    </test>
+    <test name="CheckTriangleActionTestTest">
+        <classes>
+            <class name="by.epam.action.CheckOrthogonalTriangleActionTest"/>
+        </classes>
+    </test>
+    <test name="ShapeValidatorTest">
+        <classes>
+            <class name="by.epam.validation.ShapeValidatorTest"/>
+        </classes>
+    </test>
+    <test name="TriangleValidatorTest">
+        <classes>
+            <class name="by.epam.validation.TriangleValidatorTest"/>
+        </classes>
+    </test>
+</suite>
+
+
+
