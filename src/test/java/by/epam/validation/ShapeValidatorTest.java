@@ -1,8 +1,10 @@
 package by.epam.validation;
 
+import by.epam.constant.Constants;
+import by.epam.constant.RegExForTriangle;
 import by.epam.exception.CouldNotCreateShapeException;
 import by.epam.shape.factory.TriangleCreator;
-import by.epam.shape.model.ShapeItem;
+import by.epam.shape.model.Triangle;
 import by.epam.util.FileUtils;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -15,9 +17,7 @@ import static org.testng.Assert.*;
 public class ShapeValidatorTest {
     private TriangleCreator triangleCreator;
     private ShapeValidator shapeValidator;
-    private ShapeItem shapeItem;
-    private String file = "./inputdata/inputdata.txt";
-    private final static String delimiter = "[\\s]";
+    private Triangle triangle;
 
     @BeforeMethod
     public void setUp() throws Exception {
@@ -28,23 +28,15 @@ public class ShapeValidatorTest {
 
     @Test
     public void shouldValidateShapeTest() throws CouldNotCreateShapeException {
-        //given
-        triangleCreator.createFromFile(FileUtils.openFile(file), delimiter);
-        shapeItem = triangleCreator.getTriangles().get(0);
-        //when
-
-        //then
-        assertEquals(shapeValidator.validate(shapeItem), true);
+        triangleCreator.createFromFile(FileUtils.openFile(Constants.PATH_OF_FILE), RegExForTriangle.DELIMETER);
+        triangle = triangleCreator.returnTriangles().get(0);
+        assertEquals(shapeValidator.validate(triangle), true);
 
     }
 
     @Test
     public void shouldNotValidateShapeTest() throws CouldNotCreateShapeException {
-        //given
-        triangleCreator.createFromFile(FileUtils.openFile(file), delimiter);
-        //when
-        //then
-        assertEquals(shapeValidator.validate(shapeItem), false);
-
+        triangleCreator.createFromFile(FileUtils.openFile(Constants.PATH_OF_FILE), RegExForTriangle.DELIMETER);
+        assertEquals(shapeValidator.validate(triangle), false);
     }
 }

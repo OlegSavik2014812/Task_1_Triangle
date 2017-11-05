@@ -1,9 +1,8 @@
-package by.epam.action;
+package by.epam.action.impl;
 
-import by.epam.action.result.Result;
-import by.epam.action.result.Results;
+import by.epam.constant.Constants;
 import by.epam.shape.model.Point;
-import by.epam.shape.model.ShapeItem;
+import by.epam.shape.model.Triangle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,15 +16,15 @@ public class CalculateAreaAction extends CalculateAction {
     private final static Logger LOGGER = LogManager.getLogger();
 
     @Override
-    public Result calculate(ShapeItem shapeItem) {
-        List<Point> points = shapeItem.getPoints();
-        LOGGER.info(shapeItem.getPoints().toString());
+    public String calculate(Triangle triangle) {
+        List<Point> points = triangle.getPoints();
+        LOGGER.info(triangle.getPoints().toString());
         double halfPerimeter = calculateHalfPerimeter(points);
         double a = calculateDistance(points.get(0), points.get(1));
         double b = calculateDistance(points.get(1), points.get(2));
         double c = calculateDistance(points.get(0), points.get(2));
         double area = Math.pow(halfPerimeter * (halfPerimeter - a) * (halfPerimeter - b) * (halfPerimeter - c), 0.5);
-        LOGGER.info(Results.areaIs(area));
-        return Results.areaIs(area);
+        LOGGER.info(Constants.AREA_IS + area);
+        return Constants.AREA_IS + area;
     }
 }

@@ -1,5 +1,6 @@
-package by.epam.action;
+package by.epam.action.impl;
 
+import by.epam.action.Action;
 import by.epam.shape.model.Point;
 
 import java.util.List;
@@ -11,8 +12,7 @@ import java.util.List;
 public abstract class CalculateAction implements Action {
 
     public Double calculateDistance(Point point1, Point point2) {
-        double distance = Math.hypot(Math.abs(point1.getX() - point2.getX()), Math.abs(Math.abs(point1.getY() - point2.getY())));
-        return distance;
+        return Math.hypot(Math.abs(point1.getX() - point2.getX()), Math.abs(Math.abs(point1.getY() - point2.getY())));
     }
 
     public Double calculateHalfPerimeter(List<Point> pointList) {

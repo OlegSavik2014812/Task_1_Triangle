@@ -1,11 +1,13 @@
 package by.epam.shape.model;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Oleg Savik on 06.10.2017.
  */
-public class Triangle implements ShapeItem {
+public class Triangle {
+
     private List<Point> pointList = new ArrayList<>();
 
     public Triangle(List<Point> insertPoints) {
@@ -13,7 +15,6 @@ public class Triangle implements ShapeItem {
         pointList = insertPoints;
     }
 
-    @Override
     public List<Point> getPoints() {
         return pointList;
     }

@@ -8,9 +8,9 @@ public abstract class BaseValidator<T> implements Validator<T> {
   private Validator<T> next;
 
   @Override
-  public Validator<T> setNext(Validator<T> next) {
-    this.next = next;
-    return next;
+  public Validator<T> setNext(Validator<T> validator) {
+    this.next = validator;
+    return validator;
   }
 
   protected boolean validateNext(T item) {

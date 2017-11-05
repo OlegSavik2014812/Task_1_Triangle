@@ -1,7 +1,8 @@
 package by.epam.action;
 
-import by.epam.action.result.Result;
-import by.epam.action.result.Results;
+import by.epam.action.impl.CheckOrthogonalTriangleAction;
+import by.epam.constant.Constants;
+import by.epam.constant.RegExForTriangle;
 import by.epam.shape.factory.TriangleCreator;
 import by.epam.util.FileUtils;
 import org.testng.annotations.BeforeMethod;
@@ -14,32 +15,24 @@ import static org.testng.Assert.*;
  */
 public class CheckOrthogonalTriangleActionTest {
     private TriangleCreator triangleCreator;
-    private String file = "./inputdata/inputdata.txt";
-    private final static String delimiter = "[\\s]";
 
     @BeforeMethod
     public void setUp() throws Exception {
         triangleCreator = new TriangleCreator();
-        triangleCreator.createFromFile(FileUtils.openFile(file), delimiter);
+        triangleCreator.createFromFile(FileUtils.openFile(Constants.PATH_OF_FILE), RegExForTriangle.DELIMETER);
     }
 
     @Test
     public void shouldCheckOrthogonalTriangleTest() {
-        //given
         CheckOrthogonalTriangleAction checkOrthogonalTriangleAction = new CheckOrthogonalTriangleAction();
-        //when
-        Result result = checkOrthogonalTriangleAction.calculate(triangleCreator.getTriangles().get(0));
-        //then
-        assertEquals(result, Results.orthogonalIs(true));
+        String result = checkOrthogonalTriangleAction.calculate(triangleCreator.returnTriangles().get(0));
+        assertEquals(result, Constants.ORTHOGONAL_IS + true);
     }
 
     @Test
     public void shouldNotCheckOrthogonalTriangleTest() {
-        //given
         CheckOrthogonalTriangleAction checkOrthogonalTriangleAction = new CheckOrthogonalTriangleAction();
-        //when
-        Result result = checkOrthogonalTriangleAction.calculate(triangleCreator.getTriangles().get(1));
-        //then
-        assertEquals(result, Results.orthogonalIs(false));
+        String result = checkOrthogonalTriangleAction.calculate(triangleCreator.returnTriangles().get(1));
+        assertEquals(result, Constants.ORTHOGONAL_IS + false);
     }
 }

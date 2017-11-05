@@ -36,11 +36,9 @@ public final class TriangleCreator extends ShapeCreator {
         if (isTriangleValid) {
             triangles.add(triangle);
         }
-
-
     }
 
-    public List<Triangle> getTriangles() {
+    public List<Triangle> returnTriangles() {
         return triangles;
     }
 

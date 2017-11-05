@@ -5,7 +5,7 @@ package by.epam.validation;
  */
 public interface Validator<T> {
 
-  Validator<T> setNext(Validator<T> v);
+  Validator<T> setNext(Validator<T> validator);
 
   boolean validate(T type);
 
