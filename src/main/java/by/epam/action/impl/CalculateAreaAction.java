@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 
 
 import java.util.List;
+import java.util.Observable;
 
 /**
  * Created by Oleg Savik on 08.10.2017.
@@ -26,5 +27,10 @@ public class CalculateAreaAction extends CalculateAction {
         double area = Math.pow(halfPerimeter * (halfPerimeter - a) * (halfPerimeter - b) * (halfPerimeter - c), 0.5);
         LOGGER.info(Constants.AREA_IS + area);
         return Constants.AREA_IS + area;
+    }
+
+    @Override
+    public void handleEvent(Triangle triangle) {
+        calculate(triangle);
     }
 }

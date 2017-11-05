@@ -1,6 +1,5 @@
 package by.epam.action.impl;
 
-
 import by.epam.constant.Constants;
 import by.epam.shape.model.Point;
 import by.epam.shape.model.Triangle;
@@ -39,6 +38,11 @@ public class CheckOrthogonalTriangleAction extends CalculateAction {
         }
         LOGGER.info(Constants.ORTHOGONAL_IS + false);
         return Constants.ORTHOGONAL_IS + false;
+    }
+
+    @Override
+    public void handleEvent(Triangle triangle) {
+        calculate(triangle);
     }
 }
 

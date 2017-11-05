@@ -1,18 +1,25 @@
 package by.epam.shape.model;
 
+import by.epam.shape.TriangleObservable;
+import by.epam.action.TriangleObserver;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Oleg Savik on 06.10.2017.
  */
-public class Triangle {
-
+public class Triangle implements TriangleObservable{
+    private List<TriangleObserver> triangleObservers = new ArrayList<>();
     private List<Point> pointList = new ArrayList<>();
 
     public Triangle(List<Point> insertPoints) {
         pointList = new ArrayList<>();
         pointList = insertPoints;
+    }
+
+    public void setPointList(List<Point> pointList) {
+        this.pointList = pointList;
     }
 
     public List<Point> getPoints() {
@@ -48,5 +55,22 @@ public class Triangle {
             s += point + "[\\s]";
         }
         return s;
+    }
+
+    @Override
+    public void addObserver(TriangleObserver triangleObserver) {
+        triangleObservers.add(triangleObserver);
+    }
+
+    @Override
+    public void removeObserver(TriangleObserver triangleObserver) {
+        triangleObservers.remove(triangleObserver);
+    }
+
+    @Override
+    public void notifyObservers() {
+        for (TriangleObserver triangleObserver : triangleObservers) {
+            triangleObserver.handleEvent(this);
+        }
     }
 }

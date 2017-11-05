@@ -1,5 +1,8 @@
 package by.epam.shape.factory;
 
+import by.epam.action.impl.CalculateAreaAction;
+import by.epam.action.impl.CalculatePerimeterAction;
+import by.epam.action.impl.CheckOrthogonalTriangleAction;
 import by.epam.exception.CouldNotCreateShapeException;
 import by.epam.shape.model.Point;
 import by.epam.shape.model.Triangle;
@@ -26,6 +29,9 @@ public final class TriangleCreator extends ShapeCreator {
         PointCreator pointCreator = new PointCreator();
         List<Point> points = pointCreator.create(line, delimiter);
         Triangle triangle = new Triangle(points);
+        triangle.addObserver(new CalculateAreaAction());
+        triangle.addObserver(new CalculatePerimeterAction());
+        triangle.addObserver(new CheckOrthogonalTriangleAction());
         ShapeValidator shapeValidator = new ShapeValidator();
         TriangleValidator triangleValidator = new TriangleValidator();
 
