@@ -1,4 +1,6 @@
-package by.epam.validation;
+package by.epam.validation.impl;
+
+import by.epam.validation.Validator;
 
 /**
  * Created by Oleg Savik on 08.10.2017.
@@ -13,7 +15,7 @@ public abstract class BaseValidator<T> implements Validator<T> {
     return validator;
   }
 
-  protected boolean validateNext(T item) {
+  boolean validateNext(T item) {
     if (next == null) {
       return true;
     }

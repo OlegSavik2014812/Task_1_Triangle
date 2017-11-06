@@ -7,6 +7,7 @@ import by.epam.shape.factory.TriangleCreator;
 import by.epam.shape.model.Point;
 import by.epam.shape.model.Triangle;
 import by.epam.util.FileUtils;
+import by.epam.validation.impl.TriangleValidator;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 

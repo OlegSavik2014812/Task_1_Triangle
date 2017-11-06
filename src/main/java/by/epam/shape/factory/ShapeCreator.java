@@ -20,9 +20,6 @@ public abstract class ShapeCreator {
         if (!file.exists()) {
             throw new CouldNotCreateShapeException("File doesn't exist");
         }
-        if (file == null) {
-            throw new CouldNotCreateShapeException("Link is empty");
-        }
 
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;

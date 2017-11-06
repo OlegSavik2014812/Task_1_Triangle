@@ -20,7 +20,8 @@ public class CalculatePerimeterAction extends CalculateAction {
     }
 
     @Override
-    public void handleEvent(Triangle triangle) {
+    public void handleChanges(Triangle triangle) {
         calculate(triangle);
+
     }
 }

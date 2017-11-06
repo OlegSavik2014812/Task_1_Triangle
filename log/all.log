@@ -1,4 +1,9 @@
-2017-11-05 21:39:05.125 [main] INFO  by.epam.action.impl.CalculateAreaAction - [Point (x= 0.0; y= 4.0), Point (x= 5.0; y= 0.0), Point (x= 0.0; y= 0.0)]
-2017-11-05 21:39:05.127 [main] INFO  by.epam.action.impl.CalculateAreaAction - Result for area is: 10.0
-2017-11-05 21:39:05.128 [main] INFO  by.epam.action.impl.CalculatePerimeterAction - Result for perimeter is: 15.403124237432849
-2017-11-05 21:39:05.128 [main] INFO  by.epam.action.impl.CheckOrthogonalTriangleAction - Is triangle orthogonal: true
+2017-11-06 16:17:40.905 [main] INFO  by.epam.action.impl.CalculateAreaAction - [Point (x= 0.0; y= 11.0), Point (x= 60.0; y= 0.0), Point (x= 0.0; y= 0.0)]
+2017-11-06 16:17:40.905 [main] INFO  by.epam.action.impl.CalculateAreaAction - Result for area is: 330.0
+2017-11-06 16:17:40.905 [main] INFO  by.epam.action.impl.CalculatePerimeterAction - Result for perimeter is: 132.0
+2017-11-06 16:17:40.921 [main] INFO  by.epam.action.impl.CheckOrthogonalTriangleAction - Is triangle orthogonal: true
+2017-11-06 16:17:40.921 [main] INFO  by.epam.action.impl.CheckOrthogonalTriangleAction - Is triangle orthogonal: false
+2017-11-06 16:17:40.936 [main] INFO  by.epam.action.impl.CalculateAreaAction - [Point (x= 0.0; y= 11.0), Point (x= 60.0; y= 0.0), Point (x= 0.0; y= 0.0)]
+2017-11-06 16:17:40.936 [main] INFO  by.epam.action.impl.CalculateAreaAction - Result for area is: 330.0
+2017-11-06 16:17:40.936 [main] INFO  by.epam.action.impl.CalculatePerimeterAction - Result for perimeter is: 132.0
+2017-11-06 16:17:40.936 [main] INFO  by.epam.action.impl.CheckOrthogonalTriangleAction - Is triangle orthogonal: true

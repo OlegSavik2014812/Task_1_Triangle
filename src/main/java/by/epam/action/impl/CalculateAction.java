@@ -16,6 +16,10 @@ public abstract class CalculateAction implements Action, TriangleObserver {
         return Math.hypot(Math.abs(point1.getX() - point2.getX()), Math.abs(Math.abs(point1.getY() - point2.getY())));
     }
 
+    Double calculateLength(double firstArg, double secondArg) {
+        return Math.hypot(firstArg, secondArg);
+    }
+
     Double calculateHalfPerimeter(List<Point> pointList) {
         return calculatePerimeter(pointList) / 2;
     }

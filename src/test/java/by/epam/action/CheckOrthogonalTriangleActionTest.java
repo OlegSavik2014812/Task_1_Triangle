@@ -1,9 +1,13 @@
 package by.epam.action;
 
+import by.epam.action.impl.CalculateAction;
 import by.epam.action.impl.CheckOrthogonalTriangleAction;
 import by.epam.constant.Constants;
 import by.epam.constant.RegExForTriangle;
+import by.epam.exception.CouldNotCreateShapeException;
 import by.epam.shape.factory.TriangleCreator;
+import by.epam.shape.model.Point;
+import by.epam.shape.model.Triangle;
 import by.epam.util.FileUtils;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -24,15 +28,17 @@ public class CheckOrthogonalTriangleActionTest {
 
     @Test
     public void shouldCheckOrthogonalTriangleTest() {
-        CheckOrthogonalTriangleAction checkOrthogonalTriangleAction = new CheckOrthogonalTriangleAction();
-        String result = checkOrthogonalTriangleAction.calculate(triangleCreator.returnTriangles().get(0));
+        CalculateAction calculateAction = new CheckOrthogonalTriangleAction();
+        String result = calculateAction.calculate(triangleCreator.returnTriangles().get(0));
         assertEquals(result, Constants.ORTHOGONAL_IS + true);
     }
 
     @Test
     public void shouldNotCheckOrthogonalTriangleTest() {
-        CheckOrthogonalTriangleAction checkOrthogonalTriangleAction = new CheckOrthogonalTriangleAction();
-        String result = checkOrthogonalTriangleAction.calculate(triangleCreator.returnTriangles().get(1));
+        CalculateAction calculateAction = new CheckOrthogonalTriangleAction();
+        String result = calculateAction.calculate(triangleCreator.returnTriangles().get(1));
         assertEquals(result, Constants.ORTHOGONAL_IS + false);
+
+
     }
 }

@@ -1,11 +1,14 @@
 package by.epam.action;
 
 import by.epam.action.impl.CalculateAction;
+import by.epam.action.impl.CalculateAreaAction;
 import by.epam.action.impl.CalculatePerimeterAction;
 import by.epam.constant.Constants;
 import by.epam.constant.RegExForTriangle;
 import by.epam.exception.CouldNotCreateShapeException;
 import by.epam.shape.factory.TriangleCreator;
+import by.epam.shape.model.Point;
+import by.epam.shape.model.Triangle;
 import by.epam.util.FileUtils;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -15,7 +18,7 @@ import static org.testng.Assert.*;
 /**
  * Created by Oleg Savik on 12.10.2017.
  */
-public class CalculatePerimeterActionTest {
+public class CheckCalculationPerimeterActionTest {
     private TriangleCreator triangleCreator;
 
     @BeforeMethod
@@ -25,17 +28,17 @@ public class CalculatePerimeterActionTest {
     }
 
     @Test
-    public void shouldCalculateTrianglePerimeterTest() throws Exception {
-        CalculateAction calculatePerimeter = new CalculatePerimeterAction();
-        String result = calculatePerimeter.calculate(triangleCreator.returnTriangles().get(0));
-        assertEquals(result, Constants.PERIMETER_IS + 12);
+    public void shouldCalculateTrianglePerimeterTest() {
+        CalculateAction calculateAction = new CalculatePerimeterAction();
+        String result = calculateAction.calculate(triangleCreator.returnTriangles().get(0));
+        assertEquals(result, Constants.PERIMETER_IS + 132.0);
     }
 
     @Test(expectedExceptions = IndexOutOfBoundsException.class)
-    public void shouldNotCalculateTrianglePerimeterTest() throws Exception {
-        CalculateAction calculatePerimeter = new CalculatePerimeterAction();
+    public void shouldNotCalculateTrianglePerimeterTest() {
+        CalculateAction calculateAction = new CalculatePerimeterAction();
         triangleCreator.returnTriangles().clear();
-        String result = calculatePerimeter.calculate(triangleCreator.returnTriangles().get(0));
+        String result = calculateAction.calculate(triangleCreator.returnTriangles().get(0));
         assertEquals(result, Constants.PERIMETER_IS + 6.0);
     }
 }

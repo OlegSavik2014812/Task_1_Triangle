@@ -6,9 +6,7 @@ import by.epam.shape.model.Triangle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-
 import java.util.List;
-import java.util.Observable;
 
 /**
  * Created by Oleg Savik on 08.10.2017.
@@ -30,7 +28,7 @@ public class CalculateAreaAction extends CalculateAction {
     }
 
     @Override
-    public void handleEvent(Triangle triangle) {
+    public void handleChanges(Triangle triangle) {
         calculate(triangle);
     }
 }

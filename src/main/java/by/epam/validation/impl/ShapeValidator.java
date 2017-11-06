@@ -1,4 +1,4 @@
-package by.epam.validation;
+package by.epam.validation.impl;
 
 import by.epam.shape.model.Point;
 import by.epam.shape.model.Triangle;

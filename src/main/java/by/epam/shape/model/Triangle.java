@@ -1,5 +1,7 @@
 package by.epam.shape.model;
 
+import by.epam.constant.Constants;
+import by.epam.constant.RegExForTriangle;
 import by.epam.shape.TriangleObservable;
 import by.epam.action.TriangleObserver;
 
@@ -9,7 +11,7 @@ import java.util.List;
 /**
  * Created by Oleg Savik on 06.10.2017.
  */
-public class Triangle implements TriangleObservable{
+public class Triangle implements TriangleObservable {
     private List<TriangleObserver> triangleObservers = new ArrayList<>();
     private List<Point> pointList = new ArrayList<>();
 
@@ -18,8 +20,9 @@ public class Triangle implements TriangleObservable{
         pointList = insertPoints;
     }
 
-    public void setPointList(List<Point> pointList) {
+    public void changePoints(List<Point> pointList) {
         this.pointList = pointList;
+        notifyObservers();
     }
 
     public List<Point> getPoints() {
@@ -52,7 +55,7 @@ public class Triangle implements TriangleObservable{
     public String toString() {
         String s = null;
         for (Point point : pointList) {
-            s += point + "[\\s]";
+            s += point + RegExForTriangle.DELIMETER;
         }
         return s;
     }
@@ -70,7 +73,7 @@ public class Triangle implements TriangleObservable{
     @Override
     public void notifyObservers() {
         for (TriangleObserver triangleObserver : triangleObservers) {
-            triangleObserver.handleEvent(this);
+            triangleObserver.handleChanges(this);
         }
     }
 }

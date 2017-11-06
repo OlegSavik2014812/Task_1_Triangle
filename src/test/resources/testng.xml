@@ -1,17 +1,17 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="main-suite">
-    <test name="TriangleCreatorTest">
+    <test name="CalculationAreaActionTest">
         <classes>
-            <class name="by.epam.action.CalculateAreaActionTest"/>
+            <class name="by.epam.action.CheckCalculationAreaActionTest"/>
         </classes>
     </test>
-    <test name="CalculationTestPerimeter">
+    <test name="CalculationPerimeterActionTest">
         <classes>
-            <class name="by.epam.action.CalculatePerimeterActionTest"/>
+            <class name="by.epam.action.CheckCalculationPerimeterActionTest"/>
         </classes>
     </test>
-    <test name="CheckTriangleActionTestTest">
+    <test name="OrthogonalTriangleActionTest">
         <classes>
             <class name="by.epam.action.CheckOrthogonalTriangleActionTest"/>
         </classes>
@@ -24,6 +24,11 @@
     <test name="TriangleValidatorTest">
         <classes>
             <class name="by.epam.validation.TriangleValidatorTest"/>
+        </classes>
+    </test>
+    <test name="CompareTrianglesTest">
+        <classes>
+            <class name="by.epam.compare_triangles.CompareTrianglesTest"/>
         </classes>
     </test>
 </suite>

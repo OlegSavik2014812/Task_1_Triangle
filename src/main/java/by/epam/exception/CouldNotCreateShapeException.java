@@ -20,5 +20,7 @@ public class CouldNotCreateShapeException extends Exception {
         super(message, cause);
     }
 
-
+    public CouldNotCreateShapeException(Throwable cause, String message) {
+        super(message, cause);
+    }
 }

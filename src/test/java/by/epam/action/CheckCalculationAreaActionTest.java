@@ -6,6 +6,8 @@ import by.epam.constant.Constants;
 import by.epam.constant.RegExForTriangle;
 import by.epam.exception.CouldNotCreateShapeException;
 import by.epam.shape.factory.TriangleCreator;
+import by.epam.shape.model.Point;
+import by.epam.shape.model.Triangle;
 import by.epam.util.FileUtils;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -15,7 +17,7 @@ import static org.testng.Assert.*;
 /**
  * Created by Oleg Savik on 11.10.2017.
  */
-public class CalculateAreaActionTest {
+public class CheckCalculationAreaActionTest {
     private TriangleCreator triangleCreator;
 
     @BeforeMethod
@@ -25,14 +27,14 @@ public class CalculateAreaActionTest {
     }
 
     @Test
-    public void shouldCalculateTriangleAreaTest() throws Exception {
+    public void shouldCalculateTriangleAreaTest() {
         CalculateAction calculateAction = new CalculateAreaAction();
         String result = calculateAction.calculate(triangleCreator.returnTriangles().get(0));
-        assertEquals(result, Constants.AREA_IS + 6.0);
+        assertEquals(result, Constants.AREA_IS + 330.0);
     }
 
     @Test(expectedExceptions = IndexOutOfBoundsException.class)
-    public void shouldNotCalculateTriangleTest() {
+    public void shouldNotCalculateTriangleAreaTest() {
         CalculateAction calculateAction = new CalculateAreaAction();
         triangleCreator.returnTriangles().clear();
         String result = calculateAction.calculate(triangleCreator.returnTriangles().get(0));

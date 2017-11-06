@@ -1,6 +1,7 @@
 package by.epam.action.impl;
 
 import by.epam.constant.Constants;
+import by.epam.exception.CouldNotCreateShapeException;
 import by.epam.shape.model.Point;
 import by.epam.shape.model.Triangle;
 import org.apache.logging.log4j.LogManager;
@@ -17,31 +18,34 @@ public class CheckOrthogonalTriangleAction extends CalculateAction {
     @Override
     public String calculate(Triangle triangle) {
         List<Point> points = triangle.getPoints();
-        double a = calculateDistance(points.get(0), points.get(1));
-        double b = calculateDistance(points.get(1), points.get(2));
-        double c = calculateDistance(points.get(0), points.get(2));
-        if (c > a && c > b) {
-            if (Math.pow(c, 2) == (Math.pow(a, 2) + Math.pow(b, 2))) {
-                LOGGER.info(Constants.ORTHOGONAL_IS + true);
-                return Constants.ORTHOGONAL_IS + true;
-            }
-        } else if (a > c && a > b) {
-            if (Math.pow(a, 2) == (Math.pow(c, 2) + Math.pow(b, 2))) {
-                LOGGER.info(Constants.ORTHOGONAL_IS + true);
-                return Constants.ORTHOGONAL_IS + true;
-            }
-        } else if (b > a && b > c) {
-            if (Math.pow(b, 2) == (Math.pow(c, 2) + Math.pow(a, 2))) {
-                LOGGER.info(Constants.ORTHOGONAL_IS + true);
-                return Constants.ORTHOGONAL_IS + true;
-            }
+        double lengthBetweenX0andX1 = calculateLength(points.get(1).getX(), points.get(0).getX());
+        double lengthBetweenX0andX2 = calculateLength(points.get(2).getX(), points.get(0).getX());
+        double lengthBetweenX1andX2 = calculateLength(points.get(2).getX(), points.get(1).getX());
+        double lengthBetweenY0andY1 = calculateLength(points.get(1).getY(), points.get(0).getY());
+        double lengthBetweenY0andY2 = calculateLength(points.get(2).getY(), points.get(0).getY());
+        double lengthBetweenY1andY2 = calculateLength(points.get(2).getY(), points.get(1).getY());
+        double result1 = lengthBetweenX0andX1 * lengthBetweenX0andX2 + lengthBetweenY0andY1 * lengthBetweenY0andY2;
+        double result2 = lengthBetweenX0andX1 * lengthBetweenX1andX2 + lengthBetweenY0andY1 * lengthBetweenY1andY2;
+        double result3 = lengthBetweenX0andX2 * lengthBetweenX1andX2 + lengthBetweenY0andY2 * lengthBetweenY1andY2;
+        if (result1 == 0) {
+            LOGGER.info(Constants.ORTHOGONAL_IS + true);
+            return Constants.ORTHOGONAL_IS + true;
+        }
+        if (result2 == 0) {
+            LOGGER.info(Constants.ORTHOGONAL_IS + true);
+            return Constants.ORTHOGONAL_IS + true;
+        }
+        if (result3 == 0) {
+            LOGGER.info(Constants.ORTHOGONAL_IS + true);
+            return Constants.ORTHOGONAL_IS + true;
         }
         LOGGER.info(Constants.ORTHOGONAL_IS + false);
         return Constants.ORTHOGONAL_IS + false;
+
     }
 
     @Override
-    public void handleEvent(Triangle triangle) {
+    public void handleChanges(Triangle triangle) {
         calculate(triangle);
     }
 }
