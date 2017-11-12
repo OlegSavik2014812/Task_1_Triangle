@@ -10,7 +10,7 @@ import java.util.List;
  * Created by Oleg Savik on 11.10.2017.
  */
 
-public abstract class CalculateAction implements Action, TriangleObserver {
+public abstract class CalculateAction implements Action{
 
     Double calculateDistance(Point point1, Point point2) {
         return Math.hypot(Math.abs(point1.getX() - point2.getX()), Math.abs(Math.abs(point1.getY() - point2.getY())));

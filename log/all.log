@@ -1,9 +1,9 @@
-2017-11-06 16:17:40.905 [main] INFO  by.epam.action.impl.CalculateAreaAction - [Point (x= 0.0; y= 11.0), Point (x= 60.0; y= 0.0), Point (x= 0.0; y= 0.0)]
-2017-11-06 16:17:40.905 [main] INFO  by.epam.action.impl.CalculateAreaAction - Result for area is: 330.0
-2017-11-06 16:17:40.905 [main] INFO  by.epam.action.impl.CalculatePerimeterAction - Result for perimeter is: 132.0
-2017-11-06 16:17:40.921 [main] INFO  by.epam.action.impl.CheckOrthogonalTriangleAction - Is triangle orthogonal: true
-2017-11-06 16:17:40.921 [main] INFO  by.epam.action.impl.CheckOrthogonalTriangleAction - Is triangle orthogonal: false
-2017-11-06 16:17:40.936 [main] INFO  by.epam.action.impl.CalculateAreaAction - [Point (x= 0.0; y= 11.0), Point (x= 60.0; y= 0.0), Point (x= 0.0; y= 0.0)]
-2017-11-06 16:17:40.936 [main] INFO  by.epam.action.impl.CalculateAreaAction - Result for area is: 330.0
-2017-11-06 16:17:40.936 [main] INFO  by.epam.action.impl.CalculatePerimeterAction - Result for perimeter is: 132.0
-2017-11-06 16:17:40.936 [main] INFO  by.epam.action.impl.CheckOrthogonalTriangleAction - Is triangle orthogonal: true
+2017-11-12 20:09:53.663 [main] INFO  by.epam.action.impl.CalculateAreaAction - [Point (x= 0.0; y= 11.0), Point (x= 60.0; y= 0.0), Point (x= 0.0; y= 0.0)]
+2017-11-12 20:09:53.667 [main] INFO  by.epam.action.impl.CalculateAreaAction - Result for area is: 330.0
+2017-11-12 20:09:53.684 [main] INFO  by.epam.action.impl.CalculatePerimeterAction - Result for perimeter is: 132.0
+2017-11-12 20:09:53.696 [main] INFO  by.epam.action.impl.CheckOrthogonalTriangleAction - Is triangle orthogonal: true
+2017-11-12 20:09:53.700 [main] INFO  by.epam.action.impl.CheckOrthogonalTriangleAction - Is triangle orthogonal: false
+2017-11-12 20:09:53.740 [main] INFO  by.epam.action.impl.CalculateAreaAction - [Point (x= 0.0; y= 11.0), Point (x= 60.0; y= 0.0), Point (x= 0.0; y= 0.0)]
+2017-11-12 20:09:53.740 [main] INFO  by.epam.action.impl.CalculateAreaAction - Result for area is: 330.0
+2017-11-12 20:09:53.740 [main] INFO  by.epam.action.impl.CalculatePerimeterAction - Result for perimeter is: 132.0
+2017-11-12 20:09:53.740 [main] INFO  by.epam.action.impl.CheckOrthogonalTriangleAction - Is triangle orthogonal: true

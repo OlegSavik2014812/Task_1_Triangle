@@ -18,10 +18,4 @@ public class CalculatePerimeterAction extends CalculateAction {
         LOGGER.info(Constants.PERIMETER_IS + perimeter);
         return Constants.PERIMETER_IS + perimeter;
     }
-
-    @Override
-    public void handleChanges(Triangle triangle) {
-        calculate(triangle);
-
-    }
 }

@@ -1,6 +1,5 @@
 package by.epam.shape.model;
 
-import by.epam.constant.Constants;
 import by.epam.constant.RegExForTriangle;
 import by.epam.shape.TriangleObservable;
 import by.epam.action.TriangleObserver;
@@ -73,7 +72,7 @@ public class Triangle implements TriangleObservable {
     @Override
     public void notifyObservers() {
         for (TriangleObserver triangleObserver : triangleObservers) {
-            triangleObserver.handleChanges(this);
+            triangleObserver.update(this);
         }
     }
 }

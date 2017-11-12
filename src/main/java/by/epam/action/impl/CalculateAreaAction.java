@@ -26,9 +26,4 @@ public class CalculateAreaAction extends CalculateAction {
         LOGGER.info(Constants.AREA_IS + area);
         return Constants.AREA_IS + area;
     }
-
-    @Override
-    public void handleChanges(Triangle triangle) {
-        calculate(triangle);
-    }
 }

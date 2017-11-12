@@ -43,10 +43,5 @@ public class CheckOrthogonalTriangleAction extends CalculateAction {
         return Constants.ORTHOGONAL_IS + false;
 
     }
-
-    @Override
-    public void handleChanges(Triangle triangle) {
-        calculate(triangle);
-    }
 }
 
