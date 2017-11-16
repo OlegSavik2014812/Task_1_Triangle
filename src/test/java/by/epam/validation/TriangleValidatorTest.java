@@ -36,14 +36,14 @@ public class TriangleValidatorTest {
 
     @Test
     public void shouldValidateTriangleTest() throws CouldNotCreateShapeException {
-        triangleCreator.createFromFile(FileUtils.openFile(Constants.PATH_OF_FILE), RegExForTriangle.DELIMETER);
+        triangleCreator.createFromFile(FileUtils.openFile(Constants.PATH_OF_FILE), RegExForTriangle.DELIMITER);
         triangle = triangleCreator.returnTriangles().get(0);
         assertEquals(triangleValidator.validate(triangle), true);
     }
 
     @Test
     public void shouldNotValidateTriangleTest() throws CouldNotCreateShapeException {
-        triangleCreator.createFromFile(FileUtils.openFile(Constants.PATH_OF_FILE), RegExForTriangle.DELIMETER);
+        triangleCreator.createFromFile(FileUtils.openFile(Constants.PATH_OF_FILE), RegExForTriangle.DELIMITER);
         triangle = new Triangle(pointList);
         assertEquals(triangleValidator.validate(triangle), false);
     }

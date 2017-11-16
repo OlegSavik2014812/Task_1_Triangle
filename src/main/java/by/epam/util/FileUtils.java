@@ -6,7 +6,6 @@ import java.io.File;
  * Created by Oleg Savik on 08.10.2017.
  */
 public final class FileUtils {
-
     private FileUtils() {
     }
 

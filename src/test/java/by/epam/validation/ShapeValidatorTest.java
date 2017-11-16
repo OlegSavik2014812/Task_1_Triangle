@@ -24,20 +24,18 @@ public class ShapeValidatorTest {
     public void setUp() throws Exception {
         triangleCreator = new TriangleCreator();
         shapeValidator = new ShapeValidator();
-
     }
 
     @Test
     public void shouldValidateShapeTest() throws CouldNotCreateShapeException {
-        triangleCreator.createFromFile(FileUtils.openFile(Constants.PATH_OF_FILE), RegExForTriangle.DELIMETER);
+        triangleCreator.createFromFile(FileUtils.openFile(Constants.PATH_OF_FILE), RegExForTriangle.DELIMITER);
         triangle = triangleCreator.returnTriangles().get(0);
         assertEquals(shapeValidator.validate(triangle), true);
-
     }
 
     @Test
     public void shouldNotValidateShapeTest() throws CouldNotCreateShapeException {
-        triangleCreator.createFromFile(FileUtils.openFile(Constants.PATH_OF_FILE), RegExForTriangle.DELIMETER);
+        triangleCreator.createFromFile(FileUtils.openFile(Constants.PATH_OF_FILE), RegExForTriangle.DELIMITER);
         assertEquals(shapeValidator.validate(triangle), false);
     }
 }

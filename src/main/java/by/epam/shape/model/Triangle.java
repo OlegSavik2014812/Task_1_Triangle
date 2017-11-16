@@ -54,7 +54,7 @@ public class Triangle implements TriangleObservable {
     public String toString() {
         String s = null;
         for (Point point : pointList) {
-            s += point + RegExForTriangle.DELIMETER;
+            s += point + RegExForTriangle.DELIMITER;
         }
         return s;
     }

@@ -7,17 +7,17 @@ import java.util.List;
 
 public final class TriangleCollection {
     private static List<Triangle> triangleList;
+    private static TriangleCollection instance;
 
     private TriangleCollection() {
         triangleList = new ArrayList<>();
     }
 
-    private static class TriangleCollectionHolder {
-        private final static TriangleCollection instance = new TriangleCollection();
-    }
-
     public static TriangleCollection getInstance() {
-        return TriangleCollectionHolder.instance;
+        if (instance == null) {
+            instance = new TriangleCollection();
+        }
+        return instance;
     }
 
     public static void addTriangle(Triangle triangle) {

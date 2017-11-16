@@ -17,7 +17,7 @@ public class CompareTrianglesTest {
     @BeforeMethod
     public void setUp() throws CouldNotCreateShapeException {
         triangleCreator = new TriangleCreator();
-        triangleCreator.createFromFile(FileUtils.openFile(Constants.PATH_OF_FILE), RegExForTriangle.DELIMETER);
+        triangleCreator.createFromFile(FileUtils.openFile(Constants.PATH_OF_FILE), RegExForTriangle.DELIMITER);
     }
 
     @Test

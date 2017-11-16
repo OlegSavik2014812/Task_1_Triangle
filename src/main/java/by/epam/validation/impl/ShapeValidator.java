@@ -14,13 +14,10 @@ public class ShapeValidator extends BaseValidator<Triangle> {
         if (triangle == null) {
             return false;
         }
-
         List<Point> points = triangle.getPoints();
-
         if (points == null) {
             return false;
         }
-
         if (points.isEmpty()) {
             return false;
         }

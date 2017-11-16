@@ -7,12 +7,9 @@ import by.epam.action.impl.CheckOrthogonalTriangleAction;
 import by.epam.shape.model.Triangle;
 
 public class TriangleRegistrar implements TriangleObserver {
-    private static String areaOfTriangle;
-    private static String perimeterOfTriangle;
-    private static String isOrthogonalTriangle;
-
-    private TriangleRegistrar() {
-    }
+    private String areaOfTriangle;
+    private String perimeterOfTriangle;
+    private String isOrthogonalTriangle;
 
     @Override
     public void update(Triangle triangle) {
@@ -24,35 +21,27 @@ public class TriangleRegistrar implements TriangleObserver {
         setIsOrthogonalTriangle(checkOrthogonalTriangleAction.calculate(triangle));
     }
 
-    private static class RegHolder {
-        private final static TriangleRegistrar TRIANGLE_REGISTRAR = new TriangleRegistrar();
+    private void setAreaOfTriangle(String areaOfTriangle) {
+        this.areaOfTriangle = areaOfTriangle;
     }
 
-    public static TriangleRegistrar getInstance() {
-        return RegHolder.TRIANGLE_REGISTRAR;
+    private void setPerimeterOfTriangle(String perimeterOfTriangle) {
+        this.perimeterOfTriangle = perimeterOfTriangle;
     }
 
-    public static String getAreaOfTriangle() {
+    private void setIsOrthogonalTriangle(String isOrthogonalTriangle) {
+        this.isOrthogonalTriangle = isOrthogonalTriangle;
+    }
+
+    public String getAreaOfTriangle() {
         return areaOfTriangle;
     }
 
-    public static void setAreaOfTriangle(String areaOfTriangle) {
-        TriangleRegistrar.areaOfTriangle = areaOfTriangle;
-    }
-
-    public static String getPerimeterOfTriangle() {
+    public String getPerimeterOfTriangle() {
         return perimeterOfTriangle;
     }
 
-    public static void setPerimeterOfTriangle(String perimeterOfTriangle) {
-        TriangleRegistrar.perimeterOfTriangle = perimeterOfTriangle;
-    }
-
-    public static String getIsOrthogonalTriangle() {
+    public String getIsOrthogonalTriangle() {
         return isOrthogonalTriangle;
-    }
-
-    public static void setIsOrthogonalTriangle(String isOrthogonalTriangle) {
-        TriangleRegistrar.isOrthogonalTriangle = isOrthogonalTriangle;
     }
 }

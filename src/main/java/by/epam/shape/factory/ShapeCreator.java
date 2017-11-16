@@ -1,26 +1,20 @@
 package by.epam.shape.factory;
 
 import by.epam.exception.CouldNotCreateShapeException;
-import by.epam.shape.model.Triangle;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.List;
 
 /**
  * Created by Oleg Savik on 08.10.2017.
  */
-
 public abstract class ShapeCreator {
-
     public void createFromFile(File file, String delimiter) throws CouldNotCreateShapeException {
-        //
         if (!file.exists()) {
             throw new CouldNotCreateShapeException("File doesn't exist");
         }
-
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = reader.readLine()) != null) {

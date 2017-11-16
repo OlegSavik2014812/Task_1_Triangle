@@ -11,8 +11,6 @@ import java.util.List;
  * Created by Oleg Savik on 08.10.2017.
  */
 public final class PointCreator {
-
-
     public List<Point> create(String line, String delimiter) throws CouldNotCreateShapeException {
         String[] arrayOfLines = line.split(delimiter);
         List<Point> pointList = new ArrayList<>();
@@ -27,5 +25,4 @@ public final class PointCreator {
         }
         return pointList;
     }
-
 }

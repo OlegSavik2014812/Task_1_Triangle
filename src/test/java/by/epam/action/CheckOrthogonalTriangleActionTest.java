@@ -4,10 +4,7 @@ import by.epam.action.impl.CalculateAction;
 import by.epam.action.impl.CheckOrthogonalTriangleAction;
 import by.epam.constant.Constants;
 import by.epam.constant.RegExForTriangle;
-import by.epam.exception.CouldNotCreateShapeException;
 import by.epam.shape.factory.TriangleCreator;
-import by.epam.shape.model.Point;
-import by.epam.shape.model.Triangle;
 import by.epam.util.FileUtils;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -23,7 +20,7 @@ public class CheckOrthogonalTriangleActionTest {
     @BeforeMethod
     public void setUp() throws Exception {
         triangleCreator = new TriangleCreator();
-        triangleCreator.createFromFile(FileUtils.openFile(Constants.PATH_OF_FILE), RegExForTriangle.DELIMETER);
+        triangleCreator.createFromFile(FileUtils.openFile(Constants.PATH_OF_FILE), RegExForTriangle.DELIMITER);
     }
 
     @Test
@@ -38,7 +35,5 @@ public class CheckOrthogonalTriangleActionTest {
         CalculateAction calculateAction = new CheckOrthogonalTriangleAction();
         String result = calculateAction.calculate(triangleCreator.returnTriangles().get(1));
         assertEquals(result, Constants.ORTHOGONAL_IS + false);
-
-
     }
 }

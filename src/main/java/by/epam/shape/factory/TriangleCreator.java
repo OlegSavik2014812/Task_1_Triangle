@@ -35,7 +35,7 @@ public final class TriangleCreator extends ShapeCreator {
                 .validate(triangle);
 
         if (isTriangleValid) {
-            triangle.addObserver(TriangleRegistrar.getInstance());
+            triangle.addObserver(new TriangleRegistrar());
             TriangleCollection triangleCollection= TriangleCollection.getInstance();
             triangleCollection.addTriangle(triangle);
         }

@@ -5,7 +5,6 @@ import by.epam.shape.model.Triangle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-
 /**
  * Created by Oleg Savik on 08.10.2017.
  */
